@@ -19,7 +19,11 @@ namespace BulkyBookWeb.Controllers
             return View(objCategoryList);
         }
         //Get
-       
+        public IActionResult Create()
+        {
+            return View();
+        }
+
         //post
         [HttpPost]
         [ValidateAntiForgeryToken]

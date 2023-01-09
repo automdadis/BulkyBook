@@ -27,7 +27,7 @@ namespace BulkyBookWeb.Controllers
         //post
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create (Category obj)
+        public IActionResult Create(Category obj)
         {
             if (ModelState.IsValid)
             {
@@ -36,8 +36,6 @@ namespace BulkyBookWeb.Controllers
                 return RedirectToAction("Index");  
             } 
             return View();  
-           
-
         }
     }
 }

@@ -6,7 +6,7 @@ namespace BulkyBookWeb.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly ApplicationDbContext _db;
+        private readonly ApplicationDbContext _db; 
 
         public CategoryController(ApplicationDbContext db)
         {
@@ -29,12 +29,12 @@ namespace BulkyBookWeb.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Category obj)
         {
-            if (ModelState.IsValid)
-            {
+           if (ModelState.IsValid)
+           {
                 _db.Categories.Add(obj);
                 _db.SaveChanges();
                 return RedirectToAction("Index");  
-            } 
+           } 
             return View();  
         }
     }

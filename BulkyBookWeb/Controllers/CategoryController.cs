@@ -26,7 +26,7 @@ namespace BulkyBookWeb.Controllers
 
         //post Create
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(Category obj)
         {
            if (obj.Name == obj.DisplayOrder.ToString()) 
@@ -45,12 +45,12 @@ namespace BulkyBookWeb.Controllers
         //Get Edit 
         public IActionResult Edit(int? id)
         {
-            if (id == null || id == 0) { }
+            if (id == null || id == 0)
             {
                 return NotFound();
             }
             var categoryFromDb = _db.Categories.Find(id);
-            //var categoryFromDbFirst = _db.Categories.FirstOrDefault(u=>u.Id==id);\
+            //var categoryFromDbFirst = _db.Categories.FirstOrDefault(u=>u.Id==id);
             //var categoryFromDbSingle = _db.Categories.SingleOrDefault(u => u.Id == id);4
             if (categoryFromDb == null)
             {
@@ -61,7 +61,7 @@ namespace BulkyBookWeb.Controllers
 
         //post Edit
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public IActionResult Edit(Category obj)
         {
             if (obj.Name == obj.DisplayOrder.ToString())
@@ -79,9 +79,11 @@ namespace BulkyBookWeb.Controllers
         //Get Delete
         public IActionResult Delete(int? id)
         {
-            if (id == null || id == 0) { }
+            switch (id)
             {
-                return NotFound();
+                case null:
+                case 0:
+                    return NotFound();
             }
             var categoryFromDb = _db.Categories.Find(id);
             //var categoryFromDbFirst = _db.Categories.FirstOrDefault(u=>u.Id==id);\
@@ -95,7 +97,7 @@ namespace BulkyBookWeb.Controllers
 
         //post Delete
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public IActionResult DeletePost(int? id)
         {
             var obj =_db.Categories.Find(id);

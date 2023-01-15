@@ -81,8 +81,6 @@ namespace BulkyBookWeb.Controllers
         {
             switch (id)
             {
-                case null:
-                case 0:
                     return NotFound();
             }
             var categoryFromDb = _db.Categories.Find(id);

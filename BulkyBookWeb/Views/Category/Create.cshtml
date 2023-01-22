@@ -1,6 +1,6 @@
 ﻿@model Category
 @*ΕΙναι το View για το create*@
-<form method="post">
+<form method="post" asp-action="Create">
     <div class="border p-3 mt4">
         <div class="row pb-2">
             <h2 class="text-primary">Create Category</h2>
@@ -24,7 +24,7 @@
     </div>
 </form>
 
-@section Script{
+@section Scripts{
     @{
         <partial name="_ValidationScriptsPartial" />
     }

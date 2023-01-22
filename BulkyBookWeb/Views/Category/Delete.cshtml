@@ -1,6 +1,7 @@
 ﻿@model Category
 @*ΕΙναι το View για το Delete*@
 <form method="post" asp-action="DeletePost">
+    <input asp-for="Id" hidden />
     <div class="border p-3 mt4">
         <div class="row pb-2">
             <h2 class="text-primary">Delete Category</h2>
@@ -21,7 +22,7 @@
     </div>
 </form>
 
-@section Script{
+@section Scripts{
     @{
         <partial name="_ValidationScriptsPartial" />
     }

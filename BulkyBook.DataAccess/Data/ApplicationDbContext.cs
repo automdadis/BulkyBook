@@ -12,4 +12,6 @@ public class ApplicationDbContext: DbContext
     }
     //Αυτη η γραμμη συνδέεται με το Model το οποίο φτιάξαμε
     public DbSet<Category> Categories { get; set; }
+    public DbSet<CoverType> CoverTypes { get; set; }
+    public DbSet<Product> Products { get; set; }
 }

@@ -16,6 +16,7 @@ namespace BulkyBook.DataAccess.Repository
         public Repository(ApplicationDbContext db)
         {
             _db = db;
+            //_db.Products.Include(u => u.Category);
             this.dbSet = _db.Set<T>();
         }
         public void Add(T entity)
